@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bernard MT Condensed', serif;
+    background-color: #0a0a0a;
+    color: #ffffff;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.canva-embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    margin-bottom: 100px;
+}
+
+#nowPlaying {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+h2, h3, p, span, a {
+    text-shadow: 
+        -1px -1px 1px rgba(0,0,0,0.8),
+        1px -1px 1px rgba(0,0,0,0.8),
+        -1px 1px 1px rgba(0,0,0,0.8),
+        1px 1px 1px rgba(0,0,0,0.8);
+}
+
+/* News Section Styles */
+.news-section {
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.news-toggle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.news-toggle button {
+    padding: 10px 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-size: 0.9em;
+    text-shadow: 
+        -1px -1px 1px rgba(0,0,0,0.8),
+        1px -1px 1px rgba(0,0,0,0.8),
+        -1px 1px 1px rgba(0,0,0,0.8),
+        1px 1px 1px rgba(0,0,0,0.8);
+}
+
+.news-toggle button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.news-toggle button.active {
+    background: linear-gradient(45deg, #ff2d55, #ff2d95);
+    transform: scale(1.05);
+}
+
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.news-item {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.news-item h3 {
+    margin-bottom: 15px;
+    color: #ff2d55;
+    text-shadow: 
+        -1px -1px 1px rgba(0,0,0,0.6),
+        1px -1px 1px rgba(0,0,0,0.6),
+        -1px 1px 1px rgba(0,0,0,0.6),
+        1px 1px 1px rgba(0,0,0,0.6);
+}
+
+.news-item p {
+    color: #dddddd;
+    font-size: 0.95em;
+    line-height: 1.6;
+    text-shadow: 
+        -1px -1px 1px rgba(0,0,0,0.6),
+        1px -1px 1px rgba(0,0,0,0.6),
+        -1px 1px 1px rgba(0,0,0,0.6),
+        1px 1px 1px rgba(0,0,0,0.6);
+}
+
+.news-item a {
+    color: #ff2d55;
+    text-decoration: none;
+    margin-top: 15px;
+    display: inline-block;
+    text-shadow: 
+        -1px -1px 1px rgba(0,0,0,0.6),
+        1px -1px 1px rgba(0,0,0,0.6),
+        -1px 1px 1px rgba(0,0,0,0.6),
+        1px 1px 1px rgba(0,0,0,0.6);
+}
+
+/* Style for the new radio player */
+.radio-player {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 40px auto 20px auto;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+.radio-player h2 {
+    margin-bottom: 20px;
+    color: #ff2d55;
+    font-size: 1.5em;
+    text-shadow:
+        -1px -1px 1px rgba(0,0,0,0.6),
+        1px -1px 1px rgba(0,0,0,0.6),
+        -1px 1px 1px rgba(0,0,0,0.6),
+        1px 1px 1px rgba(0,0,0,0.6);
+}
+
+#ww_ce863c49a01b0{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 50%;
+}
+
+/* Style for the audio element */
+.radio-player audio {
+    width: 100%;
+    margin-top: 10px;
+    filter: invert(1) hue-rotate(180deg);
+}
+
+/* Style for the Elfsight Weather widget */
+.elfsight-app-f38fb1d5-0aaf-4a0a-8015-940dc6fdcfe7 {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* Logo and Title Section Styles */
+.logo-title-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.logo iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.logo-title-section h1 {
+    font-size: 2em;
+    color: #fff;
+    text-shadow: 
+        -1px -1px 1px rgba(0,0,0,0.8),
+        1px -1px 1px rgba(0,0,0,0.8),
+        -1px 1px 1px rgba(0,0,0,0.8),
+        1px 1px 1px rgba(0,0,0,0.8);
+}
+
+.weather-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+.parallax-bg {
+    display: none;
+}
